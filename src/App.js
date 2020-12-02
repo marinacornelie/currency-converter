@@ -17,7 +17,7 @@ class App extends Component {
   } 
 
   changeCurrency = (currencyNew, direction) => {
-    if (direction == 'from') {
+    if (direction == 'from') { 
       this.setState({currencyFrom: currencyNew})
     } else {
       this.setState({currencyTo: currencyNew})
