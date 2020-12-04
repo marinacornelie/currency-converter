@@ -31,11 +31,13 @@ class App extends Component {
   }
 
   convertAmount = () => {
-    fetch ('https://free.currconv.com/api/v7/convert?q=' + this.state.currencyFrom + '_' + this.state.currencyTo + '&apiKey=71737f27766952ed2dd8')
+    const convertId = this.state.currencyFrom + '_' + this.state.currencyTo 
+
+    fetch ('https://free.currconv.com/api/v7/convert?q=' + convertId + '&apiKey=71737f27766952ed2dd8')
     .then((result) => result.json())
     .then((result) => {
       this.setState ({
-        amountTo: result.results[this.state.currencyFrom + '_' + this.state.currencyTo].val * this.state.amountFrom
+        amountTo: result.results[convertId].val * this.state.amountFrom
       })
     })
   }
