@@ -9,8 +9,7 @@ class Currencynumber extends Component {
         <div>
           <span>amount</span>
           <input type="number" step="any" onChange={event => this.props.changeAmount(event.target.value)} />
-        </div>
-        
+        </div>      
     );
   }
 }
