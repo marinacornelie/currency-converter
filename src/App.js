@@ -24,12 +24,6 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState !== this.state) {
-      this.convertAmount()
-    }
-  }
-
   convertAmount = () => {
     const convertId = this.state.currencyFrom + '_' + this.state.currencyTo 
 
@@ -52,6 +46,9 @@ class App extends Component {
           </div>
           <div className="column">
           <Currencyselector changeCurrency={this.changeCurrency} direction={'to'} />
+          <button onClick={this.convertAmount}>
+            Tell me!
+          </button>
           <div>{this.state.amountTo}</div>
           </div>  
       </div>
