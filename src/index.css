@@ -1,3 +1,50 @@
+body {
+  color: black;
+}
+
 .container {
-  background-color: #e0edf1fc;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.column {
+  padding: 5px;
+}
+
+.card {
+  background-color:#f37e5d61;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: none;
+}
+
+.flex {
+  display: flex;
+}
+
+button, select, span, input {
+  padding: 15px;
+  color: black;
+  margin: 10px;
+}
+
+button {
+  background-color: white;
+  border-radius: 5px;
+  font-size: large;
+  border-color: black;
+  padding: 5px;
+  border-style: solid;
+}
+
+select {
+  border-color: black;
+  border-radius: 5px;
+}
+
+input {
+  border-color: black;
+  border-radius: 5px;
+  border-width: thin;
 }

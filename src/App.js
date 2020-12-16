@@ -5,10 +5,10 @@ import Currencyselector from './Currencyselector'
 class App extends Component {
 
   state = { 
-    amountFrom: 1,
+    amountFrom: null,
     currencyFrom: 'EUR',
     currencyTo: 'USD',
-    amountTo: 0
+    amountTo: null
   }
 
 
@@ -36,21 +36,32 @@ class App extends Component {
     })
   }
 
-  render() {
+  render() {   
 
     return (
       <div className="container">
+         <div className="column">
+           <div className="card flex">
+              <span>Convert this amount</span>
+              <Currencynumber changeAmount={this.changeAmount} />
+              <span>In currency</span>
+              <Currencyselector changeCurrency={this.changeCurrency} direction={'from'}/>
+           </div>
+        </div>
         <div className="column">
-          <Currencynumber changeAmount={this.changeAmount} />
-          <Currencyselector changeCurrency={this.changeCurrency} direction={'from'}/>
+          <div className="card">
+            <span>To this currency</span>
+            <Currencyselector changeCurrency={this.changeCurrency} direction={'to'} />
+            <button onClick={this.convertAmount}>
+              Go!
+            </button>
           </div>
-          <div className="column">
-          <Currencyselector changeCurrency={this.changeCurrency} direction={'to'} />
-          <button onClick={this.convertAmount}>
-            Tell me!
-          </button>
-          <div>{this.state.amountTo}</div>
-          </div>  
+        </div>
+        <div className="column">
+          <div className="card">
+            <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
+          </div>
+        </div>  
       </div>
     )
 
