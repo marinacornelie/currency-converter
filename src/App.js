@@ -36,6 +36,17 @@ class App extends Component {
     })
   }
 
+  renderOutput = () => {
+    if (this.state.amountTo !== null ) {
+      return (
+      <div className="card">
+        <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
+      </div>
+      )
+    }
+  }
+  
+
   render() {   
 
     return (
@@ -58,9 +69,7 @@ class App extends Component {
           </div>
         </div>
         <div className="column">
-          <div className="card">
-            <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
-          </div>
+          {this.renderOutput()}
         </div>  
       </div>
     )
