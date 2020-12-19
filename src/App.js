@@ -8,12 +8,16 @@ class App extends Component {
     amountFrom: null,
     currencyFrom: 'EUR',
     currencyTo: 'USD',
-    amountTo: null
+    amountTo: null,
+    newCurrency: false
   }
 
 
   changeAmount = (newAmount) => {
     this.setState({amountFrom: newAmount})
+    this.setState ({
+      newCurrency: false
+    })
   } 
 
   changeCurrency = (currencyNew, direction) => {
@@ -22,6 +26,9 @@ class App extends Component {
     } else {
       this.setState({currencyTo: currencyNew})
     }
+    this.setState ({
+      newCurrency: false
+    })
   }
 
   convertAmount = () => {
@@ -31,13 +38,14 @@ class App extends Component {
     .then((result) => result.json())
     .then((result) => {
       this.setState ({
-        amountTo: result.results[convertId].val * this.state.amountFrom
+        amountTo: result.results[convertId].val * this.state.amountFrom,
+        newCurrency: true
       })
     })
   }
 
   renderOutput = () => {
-    if (this.state.amountTo !== null ) {
+    if (this.state.newCurrency) {
       return (
       <div className="card">
         <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
