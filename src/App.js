@@ -9,14 +9,14 @@ class App extends Component {
     currencyFrom: 'EUR',
     currencyTo: 'USD',
     amountTo: null,
-    newCurrency: false
+    showOutputCard: false
   }
 
 
   changeAmount = (newAmount) => {
     this.setState({amountFrom: newAmount})
     this.setState ({
-      newCurrency: false
+      showOutputCard: false
     })
   } 
 
@@ -27,7 +27,7 @@ class App extends Component {
       this.setState({currencyTo: currencyNew})
     }
     this.setState ({
-      newCurrency: false
+      showOutputCard: false
     })
   }
 
@@ -39,13 +39,13 @@ class App extends Component {
     .then((result) => {
       this.setState ({
         amountTo: result.results[convertId].val * this.state.amountFrom,
-        newCurrency: true
+        showOutputCard: true
       })
     })
   }
 
   renderOutput = () => {
-    if (this.state.newCurrency) {
+    if (this.state.showOutputCard) {
       return (
       <div className="card">
         <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
