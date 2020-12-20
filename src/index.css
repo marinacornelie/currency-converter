@@ -48,3 +48,13 @@ input {
   border-radius: 5px;
   border-width: thin;
 }
+
+.output {
+  background-color: white;
+  border-color: #f37e5d61;
+  border-style: solid;
+}
+
+.fw-bold {
+  font-weight: bold;
+}

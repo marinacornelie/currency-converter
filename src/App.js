@@ -47,8 +47,8 @@ class App extends Component {
   renderOutput = () => {
     if (this.state.showOutputCard) {
       return (
-      <div className="card">
-        <span>{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
+      <div className="card output">
+        <span className="fw-bold">{this.state.amountFrom} {this.state.currencyFrom} is {this.state.amountTo} {this.state.currencyTo}</span>
       </div>
       )
     }
