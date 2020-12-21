@@ -17,16 +17,19 @@ body {
   border-radius: 5px;
   padding: 10px;
   box-shadow: none;
-}
-
-.flex {
   display: flex;
+  align-items: center;
 }
 
 button, select, span, input {
   padding: 15px;
   color: black;
   margin: 10px;
+}
+
+:focus, :active { 
+  outline-color: #79ffeb;
+  border-color:white;
 }
 
 button {
@@ -41,6 +44,7 @@ button {
 select {
   border-color: black;
   border-radius: 5px;
+  max-width: 100%;
 }
 
 input {
@@ -57,4 +61,10 @@ input {
 
 .fw-bold {
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+      flex-direction: column;
+  }
 }
