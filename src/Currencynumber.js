@@ -7,7 +7,7 @@ class Currencynumber extends Component {
     
     return (
         <div>
-          <input type="number" step="any" onChange={event => this.props.changeAmount(event.target.value)} />
+          <input className="input is-danger is-small" type="number" step="any" onChange={event => this.props.changeAmount(event.target.value)} />
         </div>      
     );
   }

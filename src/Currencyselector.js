@@ -18,12 +18,14 @@ class Currencyselector extends Component {
 
   render = () => {
     return (
+      <div className="select is-multiple">
           <select onChange={event => this.props.changeCurrency(event.target.value, this.props.direction)}>
        
             {Object.keys(this.state.currencies).map((currencyCode, index) => (
               <option value={currencyCode} key={index}>{this.state.currencies[currencyCode].currencyName} {this.state.currencies[currencyCode].currencySymbol}</option> 
               ))}
           </select>    
+      </div>
     );
   }
 }

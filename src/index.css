@@ -13,12 +13,11 @@ body {
 }
 
 .card {
-  background-color:#f37e5d61;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: none;
   display: flex;
   align-items: center;
+  color: black;
 }
 
 button, select, span, input {
@@ -27,40 +26,17 @@ button, select, span, input {
   margin: 10px;
 }
 
-:focus, :active { 
-  outline-color: #79ffeb;
-  border-color:white;
+select {
+  margin: 10px 0;
 }
 
-button {
-  background-color: white;
-  border-radius: 5px;
-  font-size: large;
-  border-color: black;
-  padding: 5px;
-  border-style: solid;
+.select select:active, .select select:focus, .is-danger.input:active {
+  border-color:#f14668;
+  box-shadow: none;
 }
 
 select {
-  border-color: black;
-  border-radius: 5px;
-  max-width: 100%;
-}
-
-input {
-  border-color: black;
-  border-radius: 5px;
-  border-width: thin;
-}
-
-.output {
-  background-color: white;
-  border-color: #f37e5d61;
-  border-style: solid;
-}
-
-.fw-bold {
-  font-weight: bold;
+  font-weight: lighter;
 }
 
 @media screen and (max-width: 768px) {
