@@ -6,8 +6,8 @@ class App extends Component {
 
   state = { 
     amountFrom: null,
-    currencyFrom: 'EUR',
-    currencyTo: 'USD',
+    currencyFrom: '',
+    currencyTo: '', 
     amountTo: null,
     showOutputCard: false
   }

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 class Currencyselector extends Component {
 
-  state = {currencies: [ ] }
+  state = {currencies:[ ]}
 
   componentDidMount = () => {
 
@@ -12,6 +12,9 @@ class Currencyselector extends Component {
      this.setState ({
        currencies: result.results
      })
+     const firstCurrencyCode = Object.keys(this.state.currencies)[0]
+     console.log(firstCurrencyCode)
+     this.props.changeCurrency(firstCurrencyCode, this.props.direction)
    })
   }
 
