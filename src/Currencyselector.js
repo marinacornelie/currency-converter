@@ -6,7 +6,9 @@ class Currencyselector extends Component {
 
   componentDidMount = () => {
 
-   fetch ('https://free.currconv.com/api/v7/currencies?apiKey=71737f27766952ed2dd8')
+    const apiKey = process.env.REACT_APP_CURRENCY_API_KEY
+
+   fetch ('https://free.currconv.com/api/v7/currencies?apiKey=' + apiKey)
    .then((result) => result.json())
    .then((result) => {
      this.setState ({

@@ -33,8 +33,9 @@ class App extends Component {
 
   convertAmount = () => {
     const convertId = this.state.currencyFrom + '_' + this.state.currencyTo 
+    const apiKey = process.env.REACT_APP_CURRENCY_API_KEY
 
-    fetch ('https://free.currconv.com/api/v7/convert?q=' + convertId + '&apiKey=71737f27766952ed2dd8')
+    fetch ('https://free.currconv.com/api/v7/convert?q=' + convertId + '&apiKey=' + apiKey)
     .then((result) => result.json())
     .then((result) => {
       this.setState ({
